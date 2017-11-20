@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div>
+        <a href="{{ path('home') }}">&larr; Back to Main page</a>
+    </div>
+    <div id="page-title" class="page-title">
+        <h1> {{ article.title }} </h1>
+    </div>
+    <article>
+        <div class="container blog-container">
+            <div class="field field-body">
+                {{ article.body }}
+            </div>
+            <div class="field field-created field-created_at">
+                {{ article.createdAt|date('d-m-Y H:m') }}
+            </div>
+        </div>
+    </article>
+{% endblock %}

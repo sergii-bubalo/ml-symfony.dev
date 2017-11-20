@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div>
+        <input type="button" onclick="location.href='http://symfony.dev:88{{ path('article.add') }}';" value="Add new blog article" />
+    </div>
+    <div id="page-title" class="page-title">
+        <h1>Articles List</h1>
+    </div>
+    {% for article in articles %}
+        <article>
+            <h2><a href="{{ path('article.item', { 'id': article.id }) }}">{{ article.title }}</a></h2>
+            <div class="container blog-container">
+                <div class="field field-summary">
+                    {{ article.summary }}
+                </div>
+                <div class="field field-created field-created_at">
+                    {{ article.createdAt|date('d-m-Y H:m') }}
+                </div>
+                <nav role="navigation">
+                    <ul>
+                        <li class="read-more"><a href="{{ path('article.item', { 'id': article.id }) }}">More</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}

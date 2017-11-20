@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <style>
+        input, textarea, button {
+            display: block;
+        }
+    </style>
+    <div>
+        <a href="{{ path('home') }}">&larr; Back to Main page</a>
+    </div>
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

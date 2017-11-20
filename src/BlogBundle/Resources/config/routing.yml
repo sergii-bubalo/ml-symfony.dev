@@ -1,0 +1,17 @@
+home:
+    path: /
+    defaults: { _controller: BlogBundle:Blog:articleList }
+
+article.list:
+    path: /blog
+    defaults: { _controller: BlogBundle:Blog:articleList }
+
+article.item:
+    path: /blog/{id}
+    defaults: { _controller: BlogBundle:Blog:articleItem }
+    requirements:
+        id: \d+
+
+article.add:
+    path: /article/add
+    defaults: { _controller: BlogBundle:Admin:addArticle }
